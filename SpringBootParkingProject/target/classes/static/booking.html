@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Slot</title>
+    <style>
+    /* Body and Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('register1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333; /* Changed text color to a darker shade for better contrast */
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 20px 0;
+    color: #555; /* Changed heading color to a lighter shade */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-in-out, bounce 1s infinite alternate;
+}
+
+/* Form Styling */
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+    transform: rotateY(10deg) rotateX(5deg); /* 3D rotation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 2s ease-in-out;
+}
+
+form:hover {
+    transform: rotateY(0deg) rotateX(0deg); /* Rotate back to normal on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Label Styling for Clarity */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.1em; /* Larger font size for better readability */
+    color: #666; /* Slightly lighter color for labels */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Slight text shadow for clarity */
+}
+
+/* Input Styling */
+input[type="text"], input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+    font-size: 1em; /* Ensure the font size is adequate for readability */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5);
+    border-color: #007bff; /* Highlight the input border on focus */
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+}
+    
+    </style>
+</head>
+<body >
+    <h1><center>Book a Slot</center></h1>
+    <form id="bookingForm" method="post">
+        <label for="slotId">Slot ID:</label>
+        <input type="text" id="slotId" name="slotId" required><br><br>
+        <button type="submit">Book</button>
+    </form>
+    
+    <script src="bookingService.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
